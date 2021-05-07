@@ -1,0 +1,9 @@
+
+<h1><%= current_user.name %></h1>
+<h2>Please, change category: </h2>
+
+<h4>Round: <%= @game.count_round %> </h4>
+
+<% @category_for_change.each do |category|%>
+  <h3><%= link_to "#{category}", question_path(:category_for_game => "#{category}", :gid => @game.id, :rid => @round.id, :aid => @user_answers.id), class: "btn" %></h3>
+<% end %>

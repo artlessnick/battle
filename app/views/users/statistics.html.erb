@@ -1,0 +1,28 @@
+<% provide(:title, "Statistics") %>
+
+<h1><%= @current_user.name %>' statistics </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Category </th>
+      <th> All questions </th>
+      <th> Correct answers </th>
+      <th> % </th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @hash.each do |h|%>
+        <tr>
+          <td><%= h[0] %></td>
+          <td><%= h[1][0] %></td>
+          <td><%= h[1][1] %></td>
+          <td><%= h[1][2] %></td>
+        </tr>
+      <%end%>
+    </tbody>
+</table>
+
+
+<div class = "right"><%= link_to "Back", current_user %></div>
+

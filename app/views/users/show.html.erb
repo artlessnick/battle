@@ -1,0 +1,36 @@
+<% provide(:title, @user.name) %>
+
+<% if current_user.admin? %>
+
+<%= render "show_for_admin"%>
+
+<% else %>
+
+  <h2> <%= @user.name %></h2>
+  <h2> All game: <%= @user.allgame%></h2>
+
+  <p class="center" >Last games score:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th> Number game </th>
+        <th> Score game </th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @games_paginate.each do |game| %>
+          <tr>
+            <td><%= game.num_game %>
+            <td><%= game.score_game %>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+  <div class='center'><%= will_paginate @games_paginate%></div>
+
+  <h2><%= link_to "All statistics by categorys", statistics_path, class: " btn button-long" %></h2>
+
+  <h3><%= link_to "Start Game", start_path, class: " btn" %></h3>
+
+<%end %>

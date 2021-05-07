@@ -1,0 +1,9 @@
+<h1> Category: <%= @category%> </h1>
+<h4> Question: ><%= @round.count_questions %> </h4>
+<h2><%= @question.question %></h2>
+
+<% @answers.shuffle.each do |answer| %>
+  <h3>
+    <%= link_to "#{answer}", submit_answer_path(:gid => @game_id, :rid => @round_id, :aid => @user_answers_id, :answer => "#{answer}", :changed_question => @question.id, :results => @results.id), class: " btn button-answer"%>
+  </h3>
+<% end %>

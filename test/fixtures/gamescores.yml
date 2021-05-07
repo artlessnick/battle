@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score_game: 1
+  count_round: 1
+  user: one
+
+two:
+  score_game: 1
+  count_round: 1
+  user: two

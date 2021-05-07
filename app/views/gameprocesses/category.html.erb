@@ -1,0 +1,11 @@
+<div class="center">
+<h1><%= current_user.name %></h1>
+
+<h4>Round: <%= @game.count_round %> </h4>
+
+<h2>Please, change next category: </h2>
+
+<% @next_categorys.each do |category|%>
+  <h3><%= link_to "#{category}", question_path(:category_for_game => "#{category}", :gid => @game.id, :rid => @new_round.id, :aid => @new_user_answers.id, :results => @new_results.id), class: "btn" %></h3>
+<% end %>
+</div>

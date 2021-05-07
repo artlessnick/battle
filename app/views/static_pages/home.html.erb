@@ -1,0 +1,40 @@
+<% provide(:title, "Home") %>
+<div class="left">
+
+<% if logged_in? %>
+<h1> Hello, <%= current_user.name%> </h1>
+
+<h3>Are you ready?</h3>
+
+<h3><%= link_to "Start Game", start_path, class: " btn" %></h3>
+
+
+<% else %>
+</div>
+
+<h1 class="content1">Hello</h1>
+
+<div class='container'>
+  <div class='content'>
+    <div>
+      <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :email %> <br>
+        <%= f.email_field :email, :class=>"form-controle" %><br>
+
+        <%= f.label :password %><br>
+        <%= f.password_field :password, :class=>"form-controle" %><br>
+
+        <%= f.submit "Log in", :class => "submit"%>
+      <%end%>
+      <br>
+
+      <p>New user? <%= link_to "Sing up now", signup_path%> </p>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+
+
+

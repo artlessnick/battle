@@ -1,0 +1,11 @@
+<% provide(:title, "Top-10")%>
+
+  <h1>Top-10</h1>
+  <ol>
+    <%@users.each do |u|%>
+        <li><p><%= u.name%> <%= u.percent_correct_answers %> % correct answers <p></li>
+    <%end%>
+  </ol>
+
+
+<%= link_to "Back", root_path %>

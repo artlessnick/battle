@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  answer1: MyString
+  question1_id: 1
+  answer2: MyString
+  question2_id: 1
+  answer3: MyString
+  question3_id: 1
+  round: one
+
+two:
+  answer1: MyString
+  question1_id: 1
+  answer2: MyString
+  question2_id: 1
+  answer3: MyString
+  question3_id: 1
+  round: two

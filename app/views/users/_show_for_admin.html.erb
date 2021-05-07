@@ -1,0 +1,24 @@
+<h3><%= link_to "Add new questions", addquestions_path, class: "btn"%></h3>
+
+<h2>All players:</h2> 
+    <% @users_for_admin.each do |user| %>
+    <main class='inline-block-center'>
+      <li>
+        <div class="width-name"><%= user.name %>, <%= user.email %></div>
+
+        <div><%= link_to "Edit user", edit_user_path(id: user.id), class: "btn button-edit"%></div>
+        <div><%= link_to "Delete user", user, method: :delete,
+                                    data: { confirm: "You sure?" }, class: "btn button-delete" %></div>
+        <div>
+        <% if user.admin? %>
+          <%= button_to "Do not Admin", {action: "admin_false", :id => user.id}, class: "btn button-admin"%>
+        <% else %>
+          <%= button_to "Appoint Admin", {action: "admin_true", :id => user.id}, class: "btn button-admin"%>
+        <%end%></div>
+
+      </li>
+      </main>
+    <% end %>
+  <%= will_paginate @users_for_admin %>
+<br>
+<%= link_to "Root", root_path, class: "btn button-link"%>
